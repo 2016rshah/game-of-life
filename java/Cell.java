@@ -2,6 +2,7 @@ public class Cell{
    private int row;
    private int col;
    private boolean alive;
+   private int neighbours = -1;
    
    public Cell(int r, int c){
       row = r;
@@ -25,10 +26,6 @@ public class Cell{
    }
    public String toString()
    {
-      // String s= "[";
-      // s = s + row + ", ";
-      // s = s + col;
-      // s = s + "]";
       if(alive){
          return "1";
       }
@@ -43,5 +40,13 @@ public class Cell{
 	public void revive()
 	{
 		alive = true;
+	}
+	public void setNeighbours(int n)
+	{
+		neighbours = n;
+	}
+	public int getNeighbours()
+	{
+		return neighbours;
 	}
 }
