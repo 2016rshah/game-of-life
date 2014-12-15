@@ -1,5 +1,4 @@
-from Cell import Cell
-
+from Cell import *
 class Board(object):
 	def __init__(self, r, c):
 		self.rows = r
@@ -22,11 +21,9 @@ class Board(object):
 		self.board[i][j].alive = False
 	def reviveCell(self, i, j):
 		self.board[i][j].alive = True
-
-
 """
 	To Do:
 		check if in bounds method for coordinates
-		calculate all neighbours of one cell 
+		calculate all neighbours of one cell
 		toggleAsNeeded method
 """

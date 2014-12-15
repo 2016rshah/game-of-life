@@ -1,4 +1,4 @@
-from Board import Board
+from Board import *
 
 class Cell(object):
 	def __init__(self, r, c, a = False):
@@ -11,4 +11,4 @@ class Cell(object):
 		else:
 			return str(0)
 
-#cell class is done. 
+#cell class is done.
