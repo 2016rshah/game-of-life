@@ -5,6 +5,7 @@ class Cell(object):
 		self.row = r
 		self.col = c
 		self.alive = a
+		self.neighbours = -1
 	def __repr__(self):
 		if self.alive:
 			return str(1)
