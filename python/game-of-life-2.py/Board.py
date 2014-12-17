@@ -21,9 +21,33 @@ class Board(object):
 		self.board[i][j].alive = False
 	def reviveCell(self, i, j):
 		self.board[i][j].alive = True
-"""
-	To Do:
-		check if in bounds method for coordinates
-		calculate all neighbours of one cell
-		toggleAsNeeded method
-"""
+	def setCell(self, i, j, cell):
+		self.board[i][j] = cell
+	def withinBound(self, i, j):
+		if(i<0 or i>self.rows or j<0 or j>self.cols):
+			return False
+		else:
+			return True
+	def calculateNeighbours(self, row, col):
+		n = 0
+		for i in range(-1, 2, 0):
+			for j in range(-1, 2, 0):
+				r = row + i 
+				c = col + j
+				if(self.withinBounds(r, c)):
+					if(self.getCell(r, c).alive):
+						n += 1 
+		if this.getCell(row, col).alive:
+			n -= 1
+		self.getCell(row, col).neighbours = n
+	def toggleAsNeeded(self):
+		for i in range(self.rows):
+			for j in range(self.cols):
+				cell = this.getCell(i, j)
+				n = cell.neighbours
+				if(cell.alive):
+					if(n<2 or n>3):
+						self.killCell(i, j)
+				else:
+					if(n == 3):
+						self.reviveCell(i, j)
